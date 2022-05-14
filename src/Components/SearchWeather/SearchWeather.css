@@ -1,0 +1,16 @@
+.content-search {
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+}
+.content-search .css-18oq5cf-MuiInputBase-root-MuiInput-root:before {
+  border-bottom: 2px solid #ebebeb1c !important;
+}
+.content-search .css-1teokgg-MuiFormLabel-root-MuiInputLabel-root {
+  color: #fff !important;
+}
+.content-search .css-66dh3a-MuiInputBase-input-MuiInput-input {
+  color: white !important;
+}
+
+/*# sourceMappingURL=SearchWeather.css.map */

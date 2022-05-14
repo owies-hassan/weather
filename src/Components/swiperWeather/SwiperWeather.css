@@ -1,0 +1,13 @@
+.section-forecast {
+  margin-top: 200px;
+}
+@media (max-width: 575px) {
+  .section-forecast {
+    margin-top: 100px;
+  }
+}
+.section-forecast .swiper-wrapper {
+  text-align: center;
+}
+
+/*# sourceMappingURL=SwiperWeather.css.map */

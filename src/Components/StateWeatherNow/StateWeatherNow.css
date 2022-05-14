@@ -1,0 +1,27 @@
+.section-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-weather .content-weather-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section-weather .content-weather-info svg {
+  width: 120px !important;
+  height: 120px;
+}
+.section-weather .content-weather-details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.section-weather .progress-wait {
+  width: 100%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=StateWeatherNow.css.map */
