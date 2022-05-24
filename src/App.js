@@ -3,7 +3,7 @@
 
 import SearchWeather from "./Components/SearchWeather/SearchWeather";
 import StateWeatherNow from "./Components/StateWeatherNow/StateWeatherNow";
-import SwiperWeather from "./Components/swiperWeather/swiperWeather";
+import SwiperWeatherForcast from "./Components/swiperWeatherForcast/swiperWeatherForcast";
 import {Container} from "@mui/material";
 import {useSelector} from "react-redux";
 import './App.css'
@@ -22,7 +22,7 @@ const{bgImage}=useSelector(state=>state)
             <StateWeatherNow/>
 
         </Container>
-        <SwiperWeather/>
+        <SwiperWeatherForcast/>
 
     </div>
   );

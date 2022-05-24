@@ -8,8 +8,8 @@ import 'swiper/swiper.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import SwiperCore from 'swiper';
 import ConvertCelsius from "../ConvertCelsius";
-import './SwiperWeather.css'
-const SwiperWeather = () => {
+import './swiperWeatherForcast.css'
+const SwiperWeatherForcast = () => {
     const {weather}=useWeather('forecast')
     SwiperCore.use([Navigation]);
 
@@ -63,4 +63,4 @@ const SwiperWeather = () => {
     );
 };
 
-export default SwiperWeather;
+export default SwiperWeatherForcast;

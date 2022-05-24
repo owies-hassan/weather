@@ -25,13 +25,8 @@ const SearchWeather = () => {
         <div className='content-search'>
 <ThemeProvider theme={theme}>
 
-    <TextField
-        color='white'
-        placeholder="search"
-        multiline
-        variant="standard"
-        fullWidth={true}
-        label='your country'
+    <input
+        placeholder=' search here'
         value={name}
         onChange={(e)=>dispatch(handleSearch(e.target.value))}
     />

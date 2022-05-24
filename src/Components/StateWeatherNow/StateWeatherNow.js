@@ -4,13 +4,16 @@ import ImageWeather from "../ImageWeather";
 import ConvertCelsius from "../ConvertCelsius";
 import moment from "moment";
 import './StateWeatherNow.css'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {handleBgImage} from "../../Redux/Actions";
+import Error from "../Error/Error";
+
 
 const StateWeatherNow = () => {
     const dispatch=useDispatch()
+    const{name}=useSelector(state=>state);
 
-    const {weather,status}=useWeather('weather')
+    const {weather,status,error,loading}=useWeather('weather')
 
 
     useEffect(()=>{
@@ -58,7 +61,9 @@ const StateWeatherNow = () => {
 
                     </div>
             </div>
-              :<p className='style-global-span'>{status}</p>
+              :<div className='style-global-span'>
+                    {!name&&status&&<span>{status}</span>}
+                </div>
             }
         </Fragment>
     );

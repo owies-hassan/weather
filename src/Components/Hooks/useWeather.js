@@ -10,14 +10,20 @@ const useWeather=(type)=>{
     const[weather,setWeather]=useState([]);
     const[lat,setLat]=useState('')
     const[lon,setLon]=useState('')
-    const[status,setStatus]=useState('search here')
+    const[status,setStatus]=useState('')
     const[loading,setLoading]=useState(true)
+    const [error,setError]=useState(false)
 
 
-    const fetchForecastWeather=async ()=>{
-        const {data}= await axios.get(`https://api.openweathermap.org/data/2.5/${type}?q=${name}&appid=${key}`)
-        setWeather(await data)
-        setLoading(false)
+    const fetchForecastWeather = async () => {
+        await axios.get(`https://api.openweathermap.org/data/2.5/${type}?q=${name}&appid=${key}`).then((res) => {
+            setWeather(res.data)
+            setLoading(true)
+            setError(false)
+        }).catch((error) => {
+            setError(true)
+            setLoading(false)
+        })
     }
     const getLocation = () => {
             navigator.geolocation.getCurrentPosition((position) => {
@@ -26,7 +32,6 @@ const useWeather=(type)=>{
             })
 
     }
-
 
     useEffect(()=>{
         const fetchLocalWeather=async ()=>{
@@ -37,7 +42,7 @@ const useWeather=(type)=>{
                 setLoading(false)
                 setStatus('search here')
             }else if (!lat&&!lon){
-                setStatus('geolocation is not support by your browser ')
+                setStatus('geolocation is not support by your browser you can search here about any country ')
             }
         }
          fetchLocalWeather()
@@ -58,11 +63,9 @@ const useWeather=(type)=>{
             clearTimeout(timer)
         }
 
-    }, [name])
+    }, [name,error])
 
-
-
-    return {weather, loading,status}
+    return {weather, loading,status,error}
 
 }
 

@@ -11,14 +11,10 @@ p {
   padding: 0;
 }
 
-.App {
-  position: relative;
-  height: 100vh;
-}
 .App .absolute-img {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
 }
 
@@ -26,26 +22,38 @@ p {
   font-size: 30px;
   color: #fff;
 }
+@media (max-width: 575px) {
+  .style-global-p {
+    font-size: 20px;
+  }
+}
 
 .position-relative {
   position: relative;
 }
 
 .style-global-span {
-  font-size: 15px;
+  font-size: 25px;
   color: #fff;
+}
+@media (max-width: 575px) {
+  .style-global-span {
+    font-size: 20px;
+  }
 }
 
 .style-global-span-temp {
   position: absolute;
   top: 6px;
-  left: 57%;
-  font-size: 12px;
+  left: 63%;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.43);
 }
 @media (max-width: 575px) {
   .style-global-span-temp {
-    left: 61%;
+    left: 68%;
+    top: 17px;
+    font-size: 15px;
   }
 }
 
